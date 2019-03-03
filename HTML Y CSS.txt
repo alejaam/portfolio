@@ -1,0 +1,118 @@
+EN LOS FORMULARIOS TENEMOS ACTION
+	action="" -> se manda la información al mismo documento
+	action="page1.php" -> se manda a la pagina page1.php
+Metodos:
+	POST-> muestra la información en la URL
+	GET-> manda la información segura y oculta
+
+print_r($_POST); -> imprime las variables del formulario en forma de Array
+echo $_POST['nombre']; -> muestra el contenido de la variable
+
+if ternario:
+	$txtID=(isset($_POST['txtID']))?$_POST['txtID']:""; -> para validar si la varibale tiene un valor
+
+*****************************  CSS  ************************
+-ESTILOS.
+	Existen 3 tipos de agregar estilos y de acuerdo a la cascada entre Tag style y Arcihvo se sobreescribirá.
+
+	+In-line -> Se definen dentro de la etiqueta que queramos afectar ej. <div style="color: red; float: left;"></div>
+	+Tag style -> Es recomendable incluirlo en la etiqueta head ya que esta se carga primero ej. <style></style>
+	+Archivo externo -> Se utiliza la etiqueta link ej. <link rel="stylesheet" href="css/estilos.css">
+
+-REGLAS, SELECTORES, DECLARACIONES, PROPIEDADES Y VALORES DE CSS.
+	Selector -> header {
+					color: red;
+				}	^		^
+					|		|
+				Propiedad	Valor de propiedad
+			  |__________Declaraición_________|
+
+	+Selector de etiqueta -> Son las etiquetas que tiene HTML por ejemplo header, section, article, nav.
+	+Selector descendente -> Seleccionamos los hijos "mapeando" desde la etiqueta padre ej. body header div nav { CSS }
+	+Selector de clase: -> manipula los atributos class de etiquetas HTML llevan un punto antes ej. .link { CSS }
+	+Selector de id -> manipula los atributos id de etiquetas HTML (Los id no se pueden repetir) llevan un hash ej. #portafolio { CSS }
+
+Cuando nombramos las clases dentro de nuestra página, debemos tener bien identificado como es que esta dividido nuestro website
+
+-UNIDADES DE MEDIDA Y COLORES
+	Colores:
+		Se pueden representar con palabras clave: red, blue, transparent.
+		Usando hexadecimales o rgb(), rgba():
+			#FFFFFF blanco, #000000 negro
+			#FF0000 ROJO
+			#00FF00 VERDE
+			#0000FF AZUL
+		Usando hls(), hlsa()
+	Unidades de medida:
+		La unidad de medida por excelencia es el pixel:
+			es la menor unidad homogenea de color
+		es para poner tamaños a nuestras imagenes, texto, bordes
+		dimensiones, márgenes, rellenos.
+
+-PROPIEDADES DE LOS TEXTOS
+	Si ponemos 2 veces un elemento, se conservará el útlimo que hayamos puesto
+
+		line-height -> Alto de linea
+		font-weight -> Para cambiar el estilo dela fuente normal, bold = 600;
+		font-style -> italic, oblicua, etc...
+		letter-spacing -> Separación de letras
+		text-transform -> Transformar fuentes
+		text-decoration -> 
+
+-DIMENSIONES FIJAS PARA ELEMENTOS
+	div -> no servirá para cuando no queremos que una propiedad abarque a todos los hijos, no tiene valor semantico, pero ayuda a dividir la pagina
+
+-BACKGROUND DE COLOR E IMAGEN 
+	background -> podemos poner url, color, hex, rgb...
+	background-color -> color de fondo	
+	background-image -> imagen de fondo 
+	text-decoration -> decorado en las imagenes
+	background-size -> tamaño de fondo de imagen
+	background-repeat -> escogemos si se repite horizontal, vertical o que no se repita
+
+-BORDES
+	tenemos diferentes tipos de bordes, que le dará un mejor aspecto a nuestra página
+	border: tamaño tipo estilo 
+
+-MÁRGENES
+	margin: auto -> toma el espacio disponible a la izq y a la derecha
+
+-RELLENOS
+	Para saber cuando usar relleno, tenemos que hacerlo desde el nodo padre con respecto al hijo
+	en vez de usar un margen para el hijo, el padre deberá usar padding para establecer el espacio 
+	el borde nos dice cual seria el correcto, ya que si tenemos un padding de 100 se veria bien el contenido en distancia
+	pero no hay algo que lo separe ejemplo el borde. entonces se divide una parte para el margen y otra para el padding
+
+-MODELO DE CAJA
+	El modelo de Caja comprende el margen, el border, el padding y el ancho y alto.
+	box-sizing: border-box -> alteramos el modelo de caja hacemos que la caja siempre ocupe el tamaño hasta el borde, nunca llega a 
+								medir mas del ancho y alto. 
+
+-DISPLAY
+	Todos los elementos tienen display.
+	display: inline -> ocupar ancho que tenga el contenido, sera complicado tener elementos que tengan display block por dentro.
+						no puedo juntar un ancho y esperar que reaccione cuando el display es inline
+	display: block -> ocupa todo el ancho posible
+	display-flex -> funciona respecto de sus padres con respecto a sus hijos, acomoda los elementos en un renglon
+-FLEXBOX
+	flex-direction -> row, column. cuando estamos en columna cada elemento va a ocupar un espacio uno encima de otro
+	flex-shrink	-> si yo no quiero que mis elementos se les modifique el tamaño, es para hijos con padres flex 
+	felx-wrap -> para padres, por defecto es nowrap o sea que ningun elemento caiga, que todos esten en una linea
+				si le ponemos wrap si no hay espacio se pasa a la siguiente linea
+	justify-content: -> indica desde donde empieza a mostrarse los elementos. cuando se requiere alinear elementos
+ 						con flex de forma horizontal, necesitamos esta propiedad.	
+						flex-start es el default, flex-end los pone desde el final
+						space-between espacio entre los elementos pero el primero y ultimo no
+						space-around espacio entre TODOS los elementos, espacio igual a la izquiera y derecha (menos primero y ultimo)
+						space-evenly espacio identico hacia todos los lados
+	ALING ITEMS:
+		Ajustes de elementos verticalmente
+		flex-direction -> nos dice la direccion de los elementos puede ser columna, fila, etc...
+		vertical-align: es un alineado vertical para las imagenes. cuando tenemos elementos de texto
+						mezclado con otros elementos como imagenes. el texto se alineara con la imagen
+-POSITION 
+	position: relative; 
+
+-PORPIEDADES DE TEXTOS
+	tex-align: center, right, left
+	
